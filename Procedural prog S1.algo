@@ -1,0 +1,54 @@
+ALGORITHM  Dot_product
+PROCEDURE ORTHOGANILITE_P(arr[i].x,arr[i].y:INTEGER,VAR PS:INTEGER)
+VAR
+   i,j:INTEGER
+BEGIN
+
+ PS= arr[i].x* arr[j].x + arr[i].y* arr[j].y
+
+END
+
+
+
+VAR
+
+    Point : STRUCT
+                x : INTEGER;
+                y : INTEGER;
+            END_STRUCT
+    arr : ARRAY_OF Point[];
+ n,i,j:INTEGER;
+  PS:INTEGER :=0;
+ BEGIN
+ 
+REPEAT
+ write (n)
+ READ (n);
+UNTIL (n>=1)
+
+
+ FOR i FROM 0 TO 2n  DO
+     write('arr[i].x': ,'arr[i].y': )
+     READ(arr[i].x ,arr[i].y );
+
+  END_FOR
+
+
+    
+
+    
+
+FOR i FROM 0 TO 2n-1 DO
+FOR j FROM i+1 TO 2n DO
+ PS=ORTHOGANILITE_P(X,Y, PS);
+ IF (PS=0) THEN
+     write('les deux vecteurs v',i,'et v',j 'sont orthogonaux')
+ 
+     ELSE
+     write('les deux vecteurs v',i,'et v',j 'ne sont pasorthogonaux')
+
+     END_IF
+END_FOR
+END_FOR
+
+END
